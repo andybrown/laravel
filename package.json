@@ -1,0 +1,32 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "commit": "git-cz",
+        "release": "bumpp -x \"node bump.js ; npm run changelog\" --all",
+        "changelog": "changelogen"
+    },
+    "devDependencies": {
+        "axios": "^1.1.2",
+        "laravel-vite-plugin": "^0.7.5",
+        "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "changelogen": "^0.5.4",
+        "eslint": "^8.45.0",
+        "commitizen": "^4.3.0",
+        "cz-git": "^1.6.1"
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx,vue}": "eslint --fix"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-git"
+        }
+    }
+}
